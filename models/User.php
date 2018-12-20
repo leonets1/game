@@ -1,7 +1,7 @@
 <?php
 class User
 {
-    
+// информация о пользователе     
 public static function infoUser($UID){
     $db = Db::getConnection();
         
@@ -13,7 +13,7 @@ public static function infoUser($UID){
     return $st;  
 }
 
-
+// информация о произошедшем розыгрыше приза 
 public static function infoGame($UID){
     $db = Db::getConnection();
         
@@ -25,9 +25,11 @@ public static function infoGame($UID){
     return $st;  
 }
 
+// информация для детального описания приза
 public static function infoPrize($PRIZE_ID, $PRIZE_TYPE){
     $db = Db::getConnection();
     
+    // проверяем чтоб имя базы было допустимым
     if($PRIZE_TYPE == 'pr_money' || $PRIZE_TYPE == 'pr_things' || $PRIZE_TYPE == 'pr_bonus'){$PR_TABLE = "$PRIZE_TYPE";}else{exit;}
         
     $stmt = $db -> prepare("SELECT * FROM `$PR_TABLE` WHERE `ID` = ? ");

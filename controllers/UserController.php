@@ -1,7 +1,7 @@
 <?PHP
 class UserController {
     
-    
+ // если пользователь не авторизован перекинуть на страницу авторизации    
 function __construct(){
     if(!empty($_SESSION["UID"]) && $_SESSION["UID"] > 0 )
     {   
@@ -13,7 +13,8 @@ function __construct(){
         }
            
 }
-    
+
+// страница пользователя информация о нем о разыграном призе и детальная инфрмация о призе
 public function actionCabinet(){
 
     $UID = intval($_SESSION['UID']);

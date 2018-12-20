@@ -1,7 +1,7 @@
 <?PHP
 class AdminController {
     
-    
+// если пользователь не авторизован перекинуть на страницу авторизации     
 function __construct(){
     if(!empty($_SESSION["UID"]) && $_SESSION["UID"] > 0 )
     {   
@@ -13,7 +13,8 @@ function __construct(){
         }
            
 }
-    
+
+// начальная страница администрирования 
 public function actionCabinet($CURR_PAGE = 1){
 
     $UID = intval($_SESSION['UID']);

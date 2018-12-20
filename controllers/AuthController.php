@@ -1,7 +1,8 @@
 <?PHP
 
 class AuthController {
-    
+
+// принимаем данные авторизации и перенаправляет в кабинет если пароль и маил указаны правильно     
 public function actionAuthorisation()
 {
     if (isset($_POST['mail']) && isset($_POST['pass'])) 
@@ -39,7 +40,7 @@ public function actionAuthorisation()
 }
 
 
-        
+// регистрация нового пользователя проверка свободного майла        
 public function actionRegistration() 
 {
 
@@ -76,7 +77,7 @@ if (!empty($_POST['mail']) && !empty($_POST['pass'])  && !empty($_POST['name']) 
 
 }
 
-
+// принимаем данные авторизации и перенаправляет в кабинет если пароль и маил указаны правильно 
 public function actionAdministration()
 {
     if (isset($_POST['mail']) && isset($_POST['pass'])) 
@@ -114,7 +115,7 @@ public function actionAdministration()
 }
         
         
-           
+// выход из системы            
 public function actionExit(){
     
     unset($_SESSION['UID']);

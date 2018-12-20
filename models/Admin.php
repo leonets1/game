@@ -1,7 +1,7 @@
 <?php
 class Admin
 {
-    
+ // информация об администраторе    
 public static function infoAdmin($UID){
     $db = Db::getConnection();
         

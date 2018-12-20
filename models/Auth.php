@@ -2,7 +2,7 @@
 class Auth
 {
     
-        
+ // вход в систему         
 public static function getAuthorisation($mail, $pass)
     {
         $db = Db::getConnection();
@@ -19,7 +19,7 @@ public static function getAuthorisation($mail, $pass)
     }  
     
    
-    
+ // регистрация нового пользователя с проверкой эл .почты   
 public static function getRegistration($mail, $pass, $name, $lastname, $tel)
     {
         
@@ -58,7 +58,7 @@ public static function getRegistration($mail, $pass, $name, $lastname, $tel)
     }
     
     
-    
+// вход администратора     
 public static function getAdministration($mail, $pass)
     {
         $db = Db::getConnection();
